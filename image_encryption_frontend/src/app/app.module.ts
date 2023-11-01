@@ -2,21 +2,22 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { ImageUploadComponent } from './image-upload/image-upload.component';
-import { ImageDownloadComponent } from './image-download/image-download.component';
+import { ImgEncryptComponent } from './img-encrypt/img-encrypt.component';
+import { ImgDecryptComponent } from './img-decrypt/img-decrypt.component';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ImageUploadComponent,
-    ImageDownloadComponent
+    ImgEncryptComponent,
+    ImgDecryptComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
-      { path: 'image-upload', component: ImageUploadComponent },
-      { path: 'image-download', component: ImageDownloadComponent },
+      { path: '', component: ImgEncryptComponent },
+      { path: 'image-upload', component: ImgEncryptComponent },
+      { path: 'image-download', component: ImgDecryptComponent },
     ])
   ],
   providers: [],

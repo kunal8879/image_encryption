@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "imgCrypt-frontend": {
+    "image_encryption_frontend": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/img-crypt-frontend",
+            "outputPath": "dist/image_encryption_frontend",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "imgCrypt-frontend:build:production"
+              "browserTarget": "image_encryption_frontend:build:production"
             },
             "development": {
-              "browserTarget": "imgCrypt-frontend:build:development"
+              "browserTarget": "image_encryption_frontend:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "imgCrypt-frontend:build"
+            "browserTarget": "image_encryption_frontend:build"
           }
         },
         "test": {

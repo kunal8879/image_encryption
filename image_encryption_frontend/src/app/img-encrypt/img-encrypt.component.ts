@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { ClipboardService } from 'ngx-clipboard';
+// import { ClipboardSerivice } from 'ngx-clipboard';
 
 @Component({
-  selector: 'app-image-upload',
-  templateUrl: './image-upload.component.html',
-  styleUrls: ['./image-upload.component.css']
+  selector: 'app-img-encrypt',
+  templateUrl: './img-encrypt.component.html',
+  styleUrls: ['./img-encrypt.component.css']
 })
-export class ImageUploadComponent {
+export class ImgEncryptComponent {
   isDragging = false;
   selectedFile: File | null = null;
   progress: number = 0;
@@ -29,11 +29,11 @@ export class ImageUploadComponent {
 
  textToCopy : string = '';
 
-  constructor(private clipboardService: ClipboardService) {}
+  // constructor(private clipboardService: ClipboardService) {}
 
-  copyText() {
-    this.clipboardService.copyFromContent(this.textToCopy);
-  }
+  // copyText() {
+  //   this.clipboardService.copyFromContent(this.textToCopy);
+  // }
 
 //  constructor(private uploadService: UploadService) {}
 
