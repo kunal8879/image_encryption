@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-// import { ClipboardSerivice } from 'ngx-clipboard';
 
 @Component({
   selector: 'app-img-encrypt',
   templateUrl: './img-encrypt.component.html',
-  styleUrls: ['./img-encrypt.component.css']
+  styleUrls: ['./img-encrypt.component.scss']
 })
 export class ImgEncryptComponent {
   isDragging = false;
@@ -25,33 +24,25 @@ export class ImgEncryptComponent {
   
   dragEnd(event: any) {
     this.isDragging = false;
+ } 
+
+ url="./assets/icon.jpg";
+
+ changeImg(event:any){
+  if(event.target.files.length > 0){
+    var reader = new FileReader();
+    const imgSize = document.getElementById('img');
+    const keyVisibility = document.getElementById('key');
+    const uploadBtn = document.getElementById('upload');
+    reader.readAsDataURL(event.target.files[0]);
+    reader.onload = (event:any) => {
+      this.url = event.target?.result;
+    }
+    imgSize!.style.maxHeight = "200px";
+    imgSize!.style.maxWidth = "400px";  
+    imgSize!.style.gridColumn = "100%";
+    keyVisibility!.style.visibility = "visible";
+    uploadBtn!.style.visibility = "hidden";
+  }  
  }
-
- textToCopy : string = '';
-
-  // constructor(private clipboardService: ClipboardService) {}
-
-  // copyText() {
-  //   this.clipboardService.copyFromContent(this.textToCopy);
-  // }
-
-//  constructor(private uploadService: UploadService) {}
-
-//   onFileSelected(event: any) {
-//     this.selectedFile = event.target.files[0];
-//   }
-
-//   onUpload() {
-//     if (this.selectedFile) {
-//       this.uploadService.uploadFile(this.selectedFile).subscribe((event) => {
-//         if (event.type === HttpEventType.UploadProgress) {
-//           this.progress = Math.round((100 * event.loaded) / event.total);
-//         } else if (event.type === HttpEventType.Response) {
-//           // Handle the successful upload response here
-//           console.log(event.body);
-//         }
-//       });
-//     }
-//   }
-
 }

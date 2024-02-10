@@ -1,10 +1,16 @@
+<script>
+  let activePage = window.location.pathname;
+  let navLinks = document.querySelector('li').forEach(link => {
+    console.log(link.href);    
+  });
+</script>
 <div class="header">
   <div class="navbar">
       <ul>
-          <li id="one" [routerLink]="['/image-upload']">Encrypt</li>
-          <li [routerLink]="['/image-download']">Decrypt</li>
+          <li [routerLinkActive]="'active'" [routerLink]="['/image-upload']">Encrypt</li>
+          <li [routerLinkActive]="'active'" [routerLink]="['/image-download']">Decrypt</li>
+          <!-- <li [routerlink]="['/']"></li> -->
       </ul>
   </div>
   <router-outlet></router-outlet>
-  <button type="submit">Submit</button>
 </div>

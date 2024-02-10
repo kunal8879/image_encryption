@@ -2,7 +2,9 @@
     <div class="image">
         <div class="preview">
             <div class="upload">
-                <input type="file" accept=".png, .jpeg">
+                <!-- <img src="#" alt="img"> -->
+                <input type="file" id="selectedFile" style="display: none;" />
+                <input type="button" value="Select File" onclick="document.getElementById('selectedFile').click();" />
             </div>
         </div>
     </div>

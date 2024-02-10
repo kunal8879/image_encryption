@@ -10,7 +10,7 @@ import { RouterModule } from '@angular/router';
   declarations: [
     AppComponent,
     ImgEncryptComponent,
-    ImgDecryptComponent
+    ImgDecryptComponent,
   ],
   imports: [
     BrowserModule,
