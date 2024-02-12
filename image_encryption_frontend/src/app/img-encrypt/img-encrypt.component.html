@@ -1,15 +1,12 @@
 <div class="container">
-    <div class="image">
-        <div class="preview" (dragover)="allowDrop($event)" (drop)="handleDrop($event)">
-            <img id="img" [src]="url" alt="#"/>Upload image here
-            <div id="upload" class="upload" (dragstart)="dragStart($event)" (dragend)="dragEnd($event)" draggable="true">
-                <input type="file" id="selectedFile" style="display: none; background-color: rgb(240, 240, 240);" accept=".jpg, .jpeg" (change)="changeImg($event)"/>
-                <input type="button" value="Select File" onclick="document.getElementById('selectedFile').click();" />
-            </div>
-        </div>
-    </div>
-    <div id="key" class="key">
-        Decryption key: 
-        <!-- <button (click)="copyText()">Copy Text</button> -->
-    </div>
+  <form class="file-form">
+    <label for="file" class="file-label">
+      <div class="file-upload">
+        <p>Drag and drop</p>
+        <p>or</p>
+        <span class="browse-button">Browse Image</span>
+      </div>
+      <input id="file" type="file" />
+    </label>
+  </form>
 </div>

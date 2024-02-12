@@ -1,14 +1,12 @@
 <div class="container">
-    <div class="image">
-        <div class="preview">
-            <div class="upload">
-                <!-- <img src="#" alt="img"> -->
-                <input type="file" id="selectedFile" style="display: none;" />
-                <input type="button" value="Select File" onclick="document.getElementById('selectedFile').click();" />
-            </div>
+    <form class="file-form">
+      <label for="file" class="file-label">
+        <div class="file-upload">
+          <p>Drag and drop</p>
+          <p>or</p>
+          <span class="browse-button">Browse Image</span>
         </div>
-    </div>
-    <div class="key">
-        Please enter key: <input type="text">
-    </div>
-</div>
+        <input id="file" type="file" />
+      </label>
+    </form>
+  </div>
