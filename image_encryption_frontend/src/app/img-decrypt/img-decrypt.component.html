@@ -1,12 +1,27 @@
 <div class="container">
-    <form class="file-form">
-      <label for="file" class="file-label">
+  <form class="file-form">
+    <div class="file-label">
+      <label for="file">
         <div class="file-upload">
-          <p>Drag and drop</p>
-          <p>or</p>
-          <span class="browse-button">Browse Image</span>
+          <div id="text">
+            <p>Drag and drop</p>
+            <p>or</p>
+          </div>
+          <img id="img-display" src={{url}}>
+          <!-- <div id="browse-button"> -->
+            <span class="browse-button">Browse Image</span>
+          <!-- </div> -->
         </div>
-        <input id="file" type="file" />
+        <input id="file" type="file" (change)="getImgUrl($event)" />
       </label>
-    </form>
+      <div class="file-name">{{fileName || "No file selcted"}}</div>
+    </div>
+  </form>
+  <!-- submit button. will appear after uploading event -->
+  <!-- <div class="enc-key">
+    <input type="number" required>
   </div>
+  <div id="submit-btn">
+    <span class="browse-button" style="display:none">Submit</span>
+  </div> -->
+</div>

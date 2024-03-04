@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { ImgEncryptComponent } from './img-encrypt/img-encrypt.component';
 import { ImgDecryptComponent } from './img-decrypt/img-decrypt.component';
 import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { RouterModule } from '@angular/router';
       { path: '', component: ImgEncryptComponent },
       { path: 'image-upload', component: ImgEncryptComponent },
       { path: 'image-download', component: ImgDecryptComponent },
-    ])
+    ]),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

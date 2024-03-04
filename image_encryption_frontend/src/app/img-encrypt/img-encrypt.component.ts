@@ -1,3 +1,4 @@
+import { Block } from '@angular/compiler';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,43 +7,37 @@ import { Component } from '@angular/core';
   styleUrls: ['./img-encrypt.component.scss']
 })
 export class ImgEncryptComponent {
-  isDragging = false;
-  selectedFile: File | null = null;
-  progress: number = 0;
-  allowDrop(event: any) {
-    event.preventDefault();
-  }
-  
-  handleDrop(event: any) {
-    event.preventDefault();
-    this.isDragging = false;
-  }
-  
-  dragStart(event: any) {
-    this.isDragging = true;
-  }
-  
-  dragEnd(event: any) {
-    this.isDragging = false;
- } 
+  fileName: string = "" ;
+  url: any;
+  enckey:number = 8745982;
 
- url="./assets/icon.jpg";
 
- changeImg(event:any){
-  if(event.target.files.length > 0){
-    var reader = new FileReader();
-    const imgSize = document.getElementById('img');
-    const keyVisibility = document.getElementById('key');
-    const uploadBtn = document.getElementById('upload');
-    reader.readAsDataURL(event.target.files[0]);
-    reader.onload = (event:any) => {
-      this.url = event.target?.result;
+  getImgUrl(event: any) {
+    const fileData = event.target.files[0];
+    this.fileName = fileData.name;
+    console.log(fileData);
+
+    let reader = new FileReader();
+    reader.readAsDataURL(fileData);
+    reader.onload = () => {
+      this.url = reader.result;
     }
+
+    document.getElementById('text')!.innerHTML = "<style display: none></style>";
+    // document.getElementById('browse-button')!.innerHTML = "<style display: none></style>";
+    document.getElementById('file')!.innerHTML = "<style display: none></style>";
+    const imgSize = document.getElementById('img-display');
     imgSize!.style.maxHeight = "200px";
-    imgSize!.style.maxWidth = "400px";  
-    imgSize!.style.gridColumn = "100%";
-    keyVisibility!.style.visibility = "visible";
-    uploadBtn!.style.visibility = "hidden";
-  }  
- }
+    imgSize!.style.maxWidth = "400px";
+
+    // submit button code
+    // const submitBtn = document.getElementById('submit-btn');
+    // submitBtn!.style.display = "";
+
+
+  }
+
+  
+
+
 }
