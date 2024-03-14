@@ -32,7 +32,11 @@
   display: none;
 }
 
-.browse-button {
+.file-name {
+  margin-top: 10px;
+}
+
+.css-btn {
   background-color: rgb(82, 82, 82);
   padding: 10px 20px;
   border-radius: 10px;
@@ -44,6 +48,25 @@
   background-color: rgb(14, 14, 14);
 }  
 
-.enc-key {
+span:hover {
+  cursor: pointer;
+}
+
+#enc-key {
+  display: none;
+  margin: 5px 0px;
+  // font-size: large;
+}
+
+#submit-btn {
+  display: none;
+  margin-top: 25px;
+}
+
+#copy-btn {
+  margin-top: 10x;
+}
+
+#download {
   display: none;
 }

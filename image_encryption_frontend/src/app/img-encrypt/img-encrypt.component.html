@@ -1,27 +1,33 @@
 <div class="container">
   <form class="file-form">
     <div class="file-label">
-      <label for="file">
-        <div class="file-upload">
-          <div id="text">
-            <p>Drag and drop</p>
-            <p>or</p>
+      <div id="upload">
+        <label for="file">
+          <div class="file-upload">
+            <div id="text">
+              <p>Drag and drop</p>
+              <p>or</p>
+            </div>
+            <img id="img-display" src={{url}}>
+            <span class="css-btn" id="browse-btn">Browse Image</span>
           </div>
-          <img id="img-display" src={{url}}>
-          <!-- <div id="browse-button"> -->
-            <span class="browse-button">Browse Image</span>
-          <!-- </div> -->
+          <input id="file" type="file" (change)="getImgUrl($event)" />
+        </label>
+      </div>
+      <div id="download">
+        <div id="download-file">
+          <button class="css-btn"><a href={{url}} download="encrypted-{{fileName}}"
+              style="text-decoration: none; color: white;">Download</a></button>
         </div>
-        <input id="file" type="file" (change)="getImgUrl($event)" />
-      </label>
+      </div>
       <div class="file-name">{{fileName || "No file selcted"}}</div>
+      <div id="enc-key">
+        <p>Encryption Key: {{enckey || "Encryption Key" }}</p>
+        <button class="css-btn" id="copy-btn" (click)="copyText()">copy</button>
+      </div>
     </div>
   </form>
-  <div class="enc-key">
-    <p>{{enckey || "Encryption Key" }}</p>
-  </div>
-  <!-- submit button. will appear after uploading event -->
-  <!-- <div id="submit-btn">
-    <span class="browse-button" style="display:none">Submit</span>
-  </div> -->
+</div>
+<div id="submit-btn">
+  <span class="css-btn" (click)="submitImg()">Submit</span>
 </div>
